@@ -14,6 +14,8 @@
 		D187FA01227B1A4A0025B6A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D187F9FF227B1A4A0025B6A7 /* LaunchScreen.storyboard */; };
 		D187FA0C227B1A4A0025B6A7 /* ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187FA0B227B1A4A0025B6A7 /* ConverterTests.swift */; };
 		D187FA17227B1A4A0025B6A7 /* ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187FA16227B1A4A0025B6A7 /* ConverterUITests.swift */; };
+		D187FA25227B212F0025B6A7 /* baseline_swap_vert_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = D187FA24227B212F0025B6A7 /* baseline_swap_vert_black_24dp.png */; };
+		D187FA27227B2CB20025B6A7 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187FA26227B2CB20025B6A7 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		D187FA12227B1A4A0025B6A7 /* ConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D187FA16227B1A4A0025B6A7 /* ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterUITests.swift; sourceTree = "<group>"; };
 		D187FA18227B1A4A0025B6A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D187FA24227B212F0025B6A7 /* baseline_swap_vert_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baseline_swap_vert_black_24dp.png; path = "../../../Downloads/baseline-swap_vert-black-24/2x/baseline_swap_vert_black_24dp.png"; sourceTree = "<group>"; };
+		D187FA26227B2CB20025B6A7 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +101,14 @@
 		D187F9F5227B1A490025B6A7 /* Converter */ = {
 			isa = PBXGroup;
 			children = (
+				D187FA24227B212F0025B6A7 /* baseline_swap_vert_black_24dp.png */,
 				D187F9F6227B1A490025B6A7 /* AppDelegate.swift */,
 				D187F9F8227B1A490025B6A7 /* ViewController.swift */,
 				D187F9FA227B1A490025B6A7 /* Main.storyboard */,
 				D187F9FD227B1A4A0025B6A7 /* Assets.xcassets */,
 				D187F9FF227B1A4A0025B6A7 /* LaunchScreen.storyboard */,
 				D187FA02227B1A4A0025B6A7 /* Info.plist */,
+				D187FA26227B2CB20025B6A7 /* File.swift */,
 			);
 			path = Converter;
 			sourceTree = "<group>";
@@ -231,6 +237,7 @@
 			files = (
 				D187FA01227B1A4A0025B6A7 /* LaunchScreen.storyboard in Resources */,
 				D187F9FE227B1A4A0025B6A7 /* Assets.xcassets in Resources */,
+				D187FA25227B212F0025B6A7 /* baseline_swap_vert_black_24dp.png in Resources */,
 				D187F9FC227B1A490025B6A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D187F9F9227B1A490025B6A7 /* ViewController.swift in Sources */,
+				D187FA27227B2CB20025B6A7 /* File.swift in Sources */,
 				D187F9F7227B1A490025B6A7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

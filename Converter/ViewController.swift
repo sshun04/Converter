@@ -12,8 +12,6 @@ import UIKit
 
 class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
-    
-    
     @IBOutlet var textField : UITextField!
     @IBOutlet var pickerView1 :UIPickerView!
     @IBOutlet var pickerView2 :UIPickerView!
@@ -25,18 +23,10 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     let largeNumber = 10000000
     let formatter = NumberFormatter()
     
-
-    
-    
-    
     let dataList = [
         "数字" , "漢字" , "英語"
     ]
-    
-    
-    
-    var textFieldString = ""
-//   var defaultUnit = 0
+
     var toUnit = 0
     var fromUnit = 0
     
@@ -81,17 +71,6 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
         }
         
         
-    }
-    @objc func textFieldDidChange(notification: NSNotification){
-        if (fromUnit == 0) {
-            textField = notification.object as! UITextField
-            guard let text = textField.text else { return }
-            guard let intText = Int(text) else { textField.text = ""; return }
-            
-        }else{
-            return
-        }
-      
     }
     
     @IBAction func convert ()
@@ -138,7 +117,6 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
                 break
             default :break
             }
-            
             break
         default:
             break

@@ -17,7 +17,6 @@
 		D134340D2282A1C5004475D9 /* NuberConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D134340C2282A1C5004475D9 /* NuberConversionViewController.swift */; };
 		D13434112282D2F3004475D9 /* LengthConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13434102282D2F3004475D9 /* LengthConversionViewController.swift */; };
 		D13434132282D3D1004475D9 /* AreaConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13434122282D3D1004475D9 /* AreaConversionViewController.swift */; };
-		D13434152282DE4F004475D9 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13434142282DE4F004475D9 /* Unit.swift */; };
 		D187F9F7227B1A490025B6A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187F9F6227B1A490025B6A7 /* AppDelegate.swift */; };
 		D187F9F9227B1A490025B6A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187F9F8227B1A490025B6A7 /* ViewController.swift */; };
 		D187F9FC227B1A490025B6A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D187F9FA227B1A490025B6A7 /* Main.storyboard */; };
@@ -60,7 +59,6 @@
 		D134340C2282A1C5004475D9 /* NuberConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuberConversionViewController.swift; sourceTree = "<group>"; };
 		D13434102282D2F3004475D9 /* LengthConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthConversionViewController.swift; sourceTree = "<group>"; };
 		D13434122282D3D1004475D9 /* AreaConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaConversionViewController.swift; sourceTree = "<group>"; };
-		D13434142282DE4F004475D9 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		D187F9F3227B1A490025B6A7 /* Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Converter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D187F9F6227B1A490025B6A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D187F9F8227B1A490025B6A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 		D187F9F5227B1A490025B6A7 /* Converter */ = {
 			isa = PBXGroup;
 			children = (
-				D13434142282DE4F004475D9 /* Unit.swift */,
 				D134340F2282D251004475D9 /* UnitViewControllers */,
 				D13434002281B7D3004475D9 /* Supporting Files */,
 				D13433FC2281B5C7004475D9 /* FrostedSidebar.swift */,
@@ -331,7 +328,6 @@
 				D187F9F9227B1A490025B6A7 /* ViewController.swift in Sources */,
 				D1A92DCA227CDDD600899E2A /* Toast.swift in Sources */,
 				D187FA27227B2CB20025B6A7 /* File.swift in Sources */,
-				D13434152282DE4F004475D9 /* Unit.swift in Sources */,
 				D13433FE2281B643004475D9 /* TabBarController.swift in Sources */,
 				D13434112282D2F3004475D9 /* LengthConversionViewController.swift in Sources */,
 				D187F9F7227B1A490025B6A7 /* AppDelegate.swift in Sources */,

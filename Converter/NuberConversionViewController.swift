@@ -11,17 +11,11 @@ import UIKit
 
 class NumberConversionViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
-    @IBOutlet var textField : UITextField!
-    @IBOutlet var pickerView1 :UIPickerView!
-    @IBOutlet var pickerView2 :UIPickerView!
-    
-    
-    
-    @IBOutlet var textLabel :UILabel!
+    @IBOutlet var inputTextField : UITextField!
+    @IBOutlet var inputUnitPicker :UIPickerView!
+    @IBOutlet var outputUnitPicker :UIPickerView!
+    @IBOutlet var outputTextLabel :UILabel!
     @IBOutlet var convertButton:UIButton!
-    private var defaultPick = 0
-    private var resultPick = 0
-    
     
     let formatter = NumberFormatter()
     
@@ -37,33 +31,33 @@ class NumberConversionViewController: UIViewController,UIPickerViewDelegate,UIPi
         
        
         
-                pickerView1.delegate = self
-                pickerView1.dataSource = self
-                pickerView1.tag = 1
+                inputUnitPicker.delegate = self
+                inputUnitPicker.dataSource = self
+                inputUnitPicker.tag = 1
         
         
         
         
-                textField.placeholder = "12345"
+                inputTextField.placeholder = "12345"
         
-                textField.keyboardType = UIKeyboardType.numbersAndPunctuation
-                textField.clearButtonMode = UITextField.ViewMode.whileEditing
+                inputTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
+                inputTextField.clearButtonMode = UITextField.ViewMode.whileEditing
         
         
-                textLabel.layer.borderWidth = 1
-                textLabel.layer.borderColor = UIColor.gray.cgColor
+                outputTextLabel.layer.borderWidth = 1
+                outputTextLabel.layer.borderColor = UIColor.gray.cgColor
         
                 formatter.numberStyle = .spellOut
         
         
-                pickerView2.delegate = self
-                pickerView2.dataSource = self
-                pickerView2.tag = 2
+                outputUnitPicker.delegate = self
+                outputUnitPicker.dataSource = self
+                outputUnitPicker.tag = 2
         
                 NotificationCenter.default.addObserver(self,
                                                        selector: #selector(textFieldDidChange),
                                                                  name: UITextField.textDidChangeNotification,
-                                                                 object: textField)
+                                                                 object: inputTextField)
         
         // Do any additional setup after loading the view.
     }
@@ -116,14 +110,14 @@ class NumberConversionViewController: UIViewController,UIPickerViewDelegate,UIPi
         if (pickerView.tag == 1) {
             fromUnit = row
             switch fromUnit{
-            case 0: textField.placeholder = "12345"
-            textField.keyboardType = UIKeyboardType.numbersAndPunctuation
+            case 0: inputTextField.placeholder = "12345"
+            inputTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
                 break
-            case 1: textField.placeholder = "一万二千三百四十五"
-            textField.keyboardType = UIKeyboardType.default
+            case 1: inputTextField.placeholder = "一万二千三百四十五"
+            inputTextField.keyboardType = UIKeyboardType.default
                 break
-            case 2: textField.placeholder = "twelve thousand three hundred forty-five"
-            textField.keyboardType = UIKeyboardType.alphabet
+            case 2: inputTextField.placeholder = "twelve thousand three hundred forty-five"
+            inputTextField.keyboardType = UIKeyboardType.alphabet
                 break
             default:
                 break
@@ -139,20 +133,20 @@ class NumberConversionViewController: UIViewController,UIPickerViewDelegate,UIPi
     @IBAction func convert ()
     {
         
-        if !textField.hasText {
+        if !inputTextField.hasText {
             return
         }
         
         if toUnit == fromUnit {
-            textLabel.text = textField.text
+            outputTextLabel.text = inputTextField.text
             return
         }
         
-        if fromUnit == 1 && textField.text?.contains("京") ?? false {
+        if fromUnit == 1 && inputTextField.text?.contains("京") ?? false {
             return
         }
         
-        if fromUnit == 2 && textField.text?.contains("quadrillion") ?? false {
+        if fromUnit == 2 && inputTextField.text?.contains("quadrillion") ?? false {
             return
         }
         
@@ -203,33 +197,33 @@ class NumberConversionViewController: UIViewController,UIPickerViewDelegate,UIPi
     
     func convertToWords(){
         
-        guard let text  = textField.text else {
+        guard let text  = inputTextField.text else {
             return
         }
         let defaultUnit = Int(text)
         let formattedWord = formatter.string(from:NSNumber(value: defaultUnit!))!
-        textLabel.text = String(formattedWord)
+        outputTextLabel.text = String(formattedWord)
         
         
     }
     
     func convertToNumber() {
         
-        let defaultNuber = textField.text
+        let defaultNuber = inputTextField.text
         let convertedNumber = formatter.number(from: defaultNuber!)
-        textLabel.text = convertedNumber?.stringValue
+        outputTextLabel.text = convertedNumber?.stringValue
     }
     
     func convertAlphaBetsToKanji(){
         //        First of all, convert to number
         formatter.locale = Locale(identifier: "en_US")
-        let defaultNuber = textField.text
+        let defaultNuber = inputTextField.text
         let convertedNumber = formatter.number(from: defaultNuber!)
         
         //        convert to Kanji
         formatter.locale = Locale(identifier: "ja_JP")
         let formattedWord = formatter.string(from:convertedNumber!)!
-        textLabel.text = String(formattedWord)
+        outputTextLabel.text = String(formattedWord)
         
         
         
@@ -241,12 +235,12 @@ class NumberConversionViewController: UIViewController,UIPickerViewDelegate,UIPi
         //        First of all, convert to number
         
         formatter.locale = Locale(identifier: "ja_JP")
-        let defaultNuber = textField.text
+        let defaultNuber = inputTextField.text
         let convertedNumber = formatter.number(from: defaultNuber!)
         
         //        convert to Alphabet
         formatter.locale = Locale(identifier: "en_US")
         let formattedWord = formatter.string(from:convertedNumber!)!
-        textLabel.text = String(formattedWord)
+        outputTextLabel.text = String(formattedWord)
     }
 }

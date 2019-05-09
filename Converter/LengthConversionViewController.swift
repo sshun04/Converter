@@ -43,9 +43,7 @@ class LengthConversionViewController : UIViewController,UIPickerViewDelegate,UIP
         outputUnitPicker.dataSource = self
        outputUnitPicker.tag = 2
         
-        
-        
-        
+    
         
     }
     
@@ -104,10 +102,10 @@ class LengthConversionViewController : UIViewController,UIPickerViewDelegate,UIP
     
     @IBAction func convert(){
     
-        var inputValue : Double = atof(inputField.text!)
+        let inputValue : Double = atof(inputField.text!)
         
-        var formattedUnit = NSMeasurement(doubleValue: inputValue, unit: inputUnit).converting(to: outputUnit)
-        outPutTextLabel.text = formattedUnit.description
+        let formattedValue = NSMeasurement(doubleValue: inputValue, unit: inputUnit).converting(to: outputUnit)
+        outPutTextLabel.text = formattedValue.description
     }
 }
 

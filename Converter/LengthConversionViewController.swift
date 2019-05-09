@@ -9,15 +9,20 @@
 import Foundation
 import UIKit
 
-class LengthConversionViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
-
+class LengthConversionViewController : UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
-  
+    
+    
     let formatter = MeasurementFormatter()
     
     let unitList = [
-        "Meters","Feet","Kilometer"
+        "Meters","Feet","Kilometers"
     ]
+    
+    //   変換元と変換先の単位をIntで管理
+   
+    var inputUnit : UnitLength = UnitLength.meters
+    var outputUnit : UnitLength = UnitLength.meters
     
     @IBOutlet  var inputField: UITextField!
     @IBOutlet  var outPutTextLabel: UILabel!
@@ -25,25 +30,23 @@ class LengthConversionViewController: UIViewController,UIPickerViewDelegate,UIPi
     @IBOutlet  var inputUnitPicker: UIPickerView!
     @IBOutlet  var outputUnitPicker: UIPickerView!
     
-    let meters :Double = 5
-
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         inputUnitPicker.delegate = self
         inputUnitPicker.dataSource = self
         inputUnitPicker.tag = 1
-
+        
         outputUnitPicker.delegate = self
         outputUnitPicker.dataSource = self
         inputUnitPicker.tag = 2
-
         
-  
-        let formattedUnit = NSMeasurement(doubleValue: meters, unit: UnitLength.meters).converting(to: UnitLength.feet)
-
-     outPutTextLabel.text = formattedUnit.description
-
+        
+        
+        
+        
     }
     
     
@@ -67,7 +70,29 @@ class LengthConversionViewController: UIViewController,UIPickerViewDelegate,UIPi
                     didSelectRow row:Int,
                     inComponent componet:Int) {
         
+        if pickerView.tag == 1 {
+            //            inputUnit = unitList[row]
+            switch row {
+            case 0 : inputUnit = UnitLength.meters
+                break
+            case 1 : inputUnit = UnitLength.feet
+                break
+            case 2 : inputUnit = UnitLength.kilometers
+                break
+            default:break
+            }
+        }else{
+//            outputUnit = unitList[row]
+            switch row {
+            case 0 : outputUnit = UnitLength.meters
+                break
+            case 1 : outputUnit = UnitLength.feet
+                break
+            case 2 : outputUnit = UnitLength.kilometers
+                break
+            default:break
         
+            }}
         
     }
     
@@ -76,8 +101,13 @@ class LengthConversionViewController: UIViewController,UIPickerViewDelegate,UIPi
     @IBAction func onBurger() {
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
     }
-
-    @IBAction func convert(_ sender: Any){
     
+    @IBAction func convert(){
+    
+        let inputValue : Double = atof(inputField.text!)
+        
+        let formattedUnit = NSMeasurement(doubleValue: inputValue, unit: inputUnit).converting(to: outputUnit)
+        outPutTextLabel.text = formattedUnit.description
     }
 }
+

@@ -29,39 +29,39 @@ class NumberConversionViewController: UIViewController,UIPickerViewDelegate,UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-        
-                inputUnitPicker.delegate = self
-                inputUnitPicker.dataSource = self
-                inputUnitPicker.tag = 1
         
         
+        inputUnitPicker.delegate = self
+        inputUnitPicker.dataSource = self
+        inputUnitPicker.tag = 1
         
         
-                inputTextField.placeholder = "12345"
-        
-                inputTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
-                inputTextField.clearButtonMode = UITextField.ViewMode.whileEditing
         
         
-                outputTextLabel.layer.borderWidth = 1
-                outputTextLabel.layer.borderColor = UIColor.gray.cgColor
+        inputTextField.placeholder = "12345"
         
-                formatter.numberStyle = .spellOut
+        inputTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
+        inputTextField.clearButtonMode = UITextField.ViewMode.whileEditing
         
         
-                outputUnitPicker.delegate = self
-                outputUnitPicker.dataSource = self
-                outputUnitPicker.tag = 2
+        outputTextLabel.layer.borderWidth = 1
+        outputTextLabel.layer.borderColor = UIColor.gray.cgColor
         
-                NotificationCenter.default.addObserver(self,
-                                                       selector: #selector(textFieldDidChange),
-                                                                 name: UITextField.textDidChangeNotification,
-                                                                 object: inputTextField)
+        formatter.numberStyle = .spellOut
+        
+        
+        outputUnitPicker.delegate = self
+        outputUnitPicker.dataSource = self
+        outputUnitPicker.tag = 2
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(textFieldDidChange),
+                                               name: UITextField.textDidChangeNotification,
+                                               object: inputTextField)
         
         // Do any additional setup after loading the view.
     }
-  
+    
     
     deinit {
         NotificationCenter.default.removeObserver(self)

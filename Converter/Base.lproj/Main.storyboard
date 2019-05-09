@@ -106,8 +106,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="convert" destination="acI-fy-z9u" eventType="touchUpInside" id="OQc-Nd-zBY"/>
                                     <action selector="convert" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yqo-lR-v7v"/>
-                                    <action selector="convert:" destination="acI-fy-z9u" eventType="touchUpInside" id="lGA-vW-gHM"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fNW-i5-bqy">
@@ -144,7 +144,7 @@
                         <outlet property="convertButton" destination="gad-2t-LMy" id="3Jt-1B-68M"/>
                         <outlet property="inputField" destination="aWe-1L-x4c" id="8xL-Y0-PpE"/>
                         <outlet property="inputUnitPicker" destination="wnC-JP-jQe" id="zwg-di-WTS"/>
-                        <outlet property="outPutTextLabel" destination="4mF-jk-l7v" id="SlX-qo-dZA"/>
+                        <outlet property="outPutTextLabel" destination="4mF-jk-l7v" id="pCv-Qo-wdA"/>
                         <outlet property="outputUnitPicker" destination="fNW-i5-bqy" id="5JP-dK-2qa"/>
                     </connections>
                 </viewController>

@@ -142,10 +142,10 @@
                     <tabBarItem key="tabBarItem" title="Item 1" id="9zd-cw-LLx"/>
                     <connections>
                         <outlet property="convertButton" destination="gad-2t-LMy" id="3Jt-1B-68M"/>
-                        <outlet property="inputField" destination="aWe-1L-x4c" id="8xL-Y0-PpE"/>
-                        <outlet property="inputUnitPicker" destination="wnC-JP-jQe" id="zwg-di-WTS"/>
+                        <outlet property="inputField" destination="aWe-1L-x4c" id="IMi-3Z-hal"/>
+                        <outlet property="inputUnitPicker" destination="wnC-JP-jQe" id="XSe-53-E2Y"/>
                         <outlet property="outPutTextLabel" destination="4mF-jk-l7v" id="pCv-Qo-wdA"/>
-                        <outlet property="outputUnitPicker" destination="fNW-i5-bqy" id="5JP-dK-2qa"/>
+                        <outlet property="outputUnitPicker" destination="fNW-i5-bqy" id="ezy-un-kDY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8H-4f-HLL" userLabel="First Responder" sceneMemberID="firstResponder"/>

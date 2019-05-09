@@ -41,7 +41,7 @@ class LengthConversionViewController : UIViewController,UIPickerViewDelegate,UIP
         
         outputUnitPicker.delegate = self
         outputUnitPicker.dataSource = self
-        inputUnitPicker.tag = 2
+       outputUnitPicker.tag = 2
         
         
         
@@ -70,8 +70,8 @@ class LengthConversionViewController : UIViewController,UIPickerViewDelegate,UIP
                     didSelectRow row:Int,
                     inComponent componet:Int) {
         
-        if pickerView.tag == 1 {
-            //            inputUnit = unitList[row]
+        if (pickerView.tag == 1) {
+        
             switch row {
             case 0 : inputUnit = UnitLength.meters
                 break
@@ -82,7 +82,7 @@ class LengthConversionViewController : UIViewController,UIPickerViewDelegate,UIP
             default:break
             }
         }else{
-//            outputUnit = unitList[row]
+            
             switch row {
             case 0 : outputUnit = UnitLength.meters
                 break
@@ -104,9 +104,9 @@ class LengthConversionViewController : UIViewController,UIPickerViewDelegate,UIP
     
     @IBAction func convert(){
     
-        let inputValue : Double = atof(inputField.text!)
+        var inputValue : Double = atof(inputField.text!)
         
-        let formattedUnit = NSMeasurement(doubleValue: inputValue, unit: inputUnit).converting(to: outputUnit)
+        var formattedUnit = NSMeasurement(doubleValue: inputValue, unit: inputUnit).converting(to: outputUnit)
         outPutTextLabel.text = formattedUnit.description
     }
 }
